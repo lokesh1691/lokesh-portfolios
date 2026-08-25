@@ -103,10 +103,11 @@ const contactSlowDown = slowDown({
  */
 function issueCsrfToken(req, res) {
   const token = crypto.randomBytes(32).toString('hex');
+  const isProd = process.env.NODE_ENV === 'production';
   res.cookie('csrfToken', token, {
     httpOnly: false, // must be readable by frontend JS to be echoed back
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    secure: isProd, // required when sameSite is 'none'
+    sameSite: isProd ? 'none' : 'lax',
     maxAge: 60 * 60 * 1000
   });
   res.json({ csrfToken: token });
