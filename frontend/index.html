@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokesh Kumar | Fullstack Developer &amp; AI Automation Engineer</title>
+<meta name="description" content="Lokesh Kumar — Fullstack Developer & AI Automation Engineer. 11+ years building scalable web applications, enterprise systems, and cloud-native, AI-powered solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF8; --surface:#FFFFFF; --ink:#14171A; --muted:#5B6470;
+    --line:#E6E3DC; --accent:#3457D5; --accent-ink:#EDF1FD; --pulse:#E8973A; --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  img{max-width:100%;display:block;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(250,250,248,0.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.01em;}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:28px;font-size:0.92rem;color:var(--muted);}
+  .navlinks a{transition:color .15s ease;}
+  .navlinks a:hover{color:var(--ink);}
+  .nav-cta{font-family:'JetBrains Mono',monospace;font-size:0.82rem;border:1px solid var(--ink);border-radius:6px;padding:8px 14px;transition:background .15s ease, color .15s ease;}
+  .nav-cta:hover{background:var(--ink);color:var(--bg);}
+
+  .hero{padding:96px 0 88px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.86rem;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+  .cursor{display:inline-block;width:8px;height:16px;background:var(--accent);animation:blink 1.1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.4rem, 5vw, 3.6rem);letter-spacing:-0.02em;line-height:1.05;margin-bottom:14px;}
+  .role{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.25rem;color:var(--accent);margin-bottom:22px;}
+  .hero-copy{max-width:52ch;color:var(--muted);font-size:1.04rem;margin-bottom:32px;}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;font-size:0.95rem;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;cursor:pointer;border:none;font-family:inherit;}
+  .btn-primary{background:var(--ink);color:var(--bg);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(20,23,26,0.18);}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:transparent;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 1px 0 rgba(20,23,26,0.02);}
+  .panel-head{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--muted);padding-bottom:16px;margin-bottom:16px;border-bottom:1px dashed var(--line);}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--pulse);animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  .stat-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:0.92rem;}
+  .stat-row:last-child{border-bottom:none;}
+  .stat-label{color:var(--muted);}
+  .stat-value{font-family:'JetBrains Mono',monospace;font-weight:600;}
+
+  section{padding:80px 0;}
+  .section-head{margin-bottom:40px;}
+  .eyebrow-sm{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--accent);margin-bottom:8px;}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-0.01em;}
+
+  #about{border-top:1px solid var(--line);}
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start;}
+  .about-copy{color:var(--muted);font-size:1.02rem;}
+  .about-copy p+p{margin-top:16px;}
+  .facts{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .facts li{display:flex;gap:12px;font-size:0.94rem;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px;}
+  .facts b{font-family:'Space Grotesk',sans-serif;min-width:64px;color:var(--accent);}
+
+  #skills{border-top:1px solid var(--line);background:var(--surface);}
+  .skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .skill-group{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--bg);}
+  .skill-group h3{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.04em;}
+  .flags{display:flex;flex-wrap:wrap;gap:8px;}
+  .flag{font-family:'JetBrains Mono',monospace;font-size:0.82rem;background:var(--accent-ink);color:var(--accent);padding:6px 10px;border-radius:6px;transition:background .15s ease, color .15s ease;}
+  .flag:hover{background:var(--accent);color:#fff;}
+
+  #projects{border-top:1px solid var(--line);}
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .project-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .project-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,23,26,0.08);border-color:var(--ink);}
+  .project-tag{font-family:'JetBrains Mono',monospace;font-size:0.74rem;color:var(--pulse);}
+  .project-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;}
+  .project-card p{color:var(--muted);font-size:0.94rem;flex-grow:1;}
+  .project-link{font-size:0.86rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px;}
+  .project-link:after{content:"→";transition:transform .15s ease;}
+  .project-link:hover:after{transform:translateX(3px);}
+  .project-note{margin-top:24px;font-size:0.86rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+
+  #contact{border-top:1px solid var(--line);background:var(--surface);}
+  .contact-panel{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .contact-copy p{color:var(--muted);max-width:44ch;margin-top:14px;}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:26px;}
+  .contact-list a{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:0.9rem;padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:var(--bg);transition:border-color .15s ease, background .15s ease;}
+  .contact-list a:hover{border-color:var(--accent);background:var(--accent-ink);}
+  .contact-list .k{color:var(--muted);}
+
+  .form{display:flex;flex-direction:column;gap:14px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--muted);}
+  .field input, .field textarea{
+    font-family:'Inter',sans-serif;font-size:0.94rem;padding:12px 14px;
+    border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--accent);}
+  .hp-field{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;}
+  .form-msg{font-family:'JetBrains Mono',monospace;font-size:0.84rem;min-height:1.2em;}
+  .form-msg.ok{color:#1a7f4b;}
+  .form-msg.err{color:#c0392b;}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;color:var(--muted);}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;}
+    .about-grid, .skill-groups, .project-grid, .contact-panel{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">L<span>K</span>.</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">$ contact --me</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow">$ whoami<span class="cursor"></span></div>
+      <h1>Lokesh Kumar</h1>
+      <div class="role">Fullstack Developer &amp; AI Automation Engineer</div>
+      <p class="hero-copy">
+        11+ years building scalable web applications, enterprise systems, microservices,
+        and cloud-native solutions — now focused on integrating intelligent workflows,
+        APIs, and LLM-powered automation to improve productivity and business efficiency.
+      </p>
+      <div class="btn-row">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><span class="dot"></span> status.json — available for work</div>
+      <div class="stat-row"><span class="stat-label">Experience</span><span class="stat-value">11+ yrs</span></div>
+      <div class="stat-row"><span class="stat-label">Core stack</span><span class="stat-value">Java / React / Node</span></div>
+      <div class="stat-row"><span class="stat-label">Cloud</span><span class="stat-value">AWS · Azure · GCP</span></div>
+      <div class="stat-row"><span class="stat-label">Focus</span><span class="stat-value">AI Automation</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="section-head">
+          <div class="eyebrow-sm">$ cat about.md</div>
+          <h2>About</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Full Stack Developer &amp; AI Automation Engineer with 11+ years of experience
+            building scalable web applications, enterprise systems, microservices, and
+            cloud-native solutions.
+          </p>
+          <p>
+            Skilled in Java, Spring Boot, React, Node.js, Python, AWS, and modern AI
+            automation, with a focus on integrating intelligent workflows, APIs, and
+            LLM-powered solutions to improve productivity and business efficiency.
+          </p>
+        </div>
+      </div>
+      <ul class="facts reveal">
+        <li><b>Backend</b> Java, Spring Boot, Node.js, Python, Kotlin</li>
+        <li><b>Frontend</b> React.js, Angular, TypeScript</li>
+        <li><b>Cloud</b> AWS, Azure, GCP — cloud-native architecture</li>
+        <li><b>Focus</b> Cloud-native modernization, Microservices , AI-driven automation K8's </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow-sm">$ ls ./skills</div>
+        <h2>Skills</h2>
+      </div>
+      <div class="skill-groups reveal">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="flags">
+            <span class="flag">--java</span>
+            <span class="flag">--typescript</span>
+            <span class="flag">--python</span>
+            <span class="flag">--kotlin</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <div class="flags">
+            <span class="flag">--react</span>
+            <span class="flag">--angular</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <div class="flags">
+            <span class="flag">--spring-boot</span>
+            <span class="flag">--node.js</span>
+            <span class="flag">--reactive-programming</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cloud &amp; Platform</h3>
+          <div class="flags">
+            <span class="flag">--aws</span>
+            <span class="flag">--azure</span>
+            <span class="flag">--gcp</span>
+            <span class="flag">--cloud-native</span>
+            <span class="flag">--modernization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow-sm">$ ls ./projects</div>
+        <h2>Selected Projects</h2>
+      </div>
+      <div class="project-grid reveal">
+        <div class="project-card">
+          <div class="project-tag">AI AUTOMATION</div>
+          <h3>Workflow Orchestrator</h3>
+          <p>LLM-powered automation layer that routes business workflows across internal APIs, cutting manual processing time significantly.</p>
+          <a href="#" class="project-link">View project</a>
+        </div>
+        <div class="project-card">
+          <div class="project-tag">CLOUD MIGRATION</div>
+          <h3>Legacy-to-Cloud Modernization</h3>
+          <p>Migrated a monolithic Java enterprise system to a microservices architecture on AWS, improving deploy frequency and uptime.</p>
+          <a href="#" class="project-link">View project</a>
+        </div>
+        <div class="project-card">
+          <div class="project-tag">FULLSTACK</div>
+          <h3>Enterprise Dashboard Suite</h3>
+          <p>React + Spring Boot dashboard platform for real-time operational reporting across multiple business units.</p>
+          <a href="#" class="project-link">View project</a>
+        </div>
+        <div class="project-card">
+          <div class="project-tag">INTEGRATION</div>
+          <h3>Multi-Cloud API Gateway</h3>
+          <p>Unified API gateway across AWS, Azure, and GCP services, standardizing auth, logging, and rate-limiting.</p>
+          <a href="#" class="project-link">View project</a>
+        </div>
+      </div>
+      <div class="project-note">// placeholder projects — swap in your real project names, descriptions, and links</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-panel">
+      <div>
+        <div class="reveal">
+          <div class="eyebrow-sm">$ contact --init</div>
+          <h2>Let's work together</h2>
+          <p style="color:var(--muted);max-width:44ch;margin-top:14px;">Open to fullstack, cloud modernization, and AI automation engagements.</p>
+        </div>
+        <ul class="contact-list reveal">
+          <li><a href="mailto:hello@gmail.com"><span class="k">email</span>lokeshresearch91@gmail.com</a></li>
+          <li><a href="https://github.com/yourusername" target="_blank" rel="noopener"><span class="k">github</span> github.com/lokesh-kumar</a></li>
+          <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><span class="k">linkedin</span> linkedin.com/in/lokesh-kumar-78399654</a></li>
+          <li><a href="tel:+10000000000"><span class="k">phone</span> +91-9958421467</a></li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="form panel reveal" novalidate>
+        <div class="eyebrow-sm" style="margin-bottom:4px;">$ send --message</div>
+
+        <!-- honeypot field: real users never see or fill this. Bots/scrapers often do. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required maxlength="80" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required maxlength="120" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required maxlength="2000"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Send message</button>
+        <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> Lokesh Kumar. Built with Next.js &amp; deployed on Vercel.</span>
+  <span class="mono">v1.0</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // ---- Contact form: talks to the backend API in /backend ----
+  // Set this to your deployed backend URL (e.g. https://your-backend.onrender.com)
+  const API_BASE = window.PORTFOLIO_API_BASE || 'http://localhost:4000';
+
+  const form = document.getElementById('contact-form');
+  const msgEl = document.getElementById('form-msg');
+  const submitBtn = document.getElementById('submit-btn');
+  const formRenderedAt = Date.now(); // used server-side to reject too-fast (bot-speed) submissions
+
+  let csrfToken = null;
+  // Fetch a CSRF token as soon as the page loads (double-submit cookie pattern).
+  fetch(`${API_BASE}/api/csrf-token`, { credentials: 'include' })
+    .then(r => r.json())
+    .then(d => { csrfToken = d.csrfToken; })
+    .catch(() => { /* backend not reachable yet — form will show an error on submit */ });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgEl.textContent = '';
+    msgEl.className = 'form-msg';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
+      company: form.company.value, // honeypot — should always be empty
+      renderedAt: formRenderedAt
+    };
+
+    try {
+      const res = await fetch(`${API_BASE}/api/contact`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken || ''
+        },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        msgEl.textContent = 'Message sent — thank you.';
+        msgEl.classList.add('ok');
+        form.reset();
+      } else {
+        msgEl.textContent = data.error || 'Something went wrong. Please try again.';
+        msgEl.classList.add('err');
+      }
+    } catch (err) {
+      msgEl.textContent = 'Could not reach the server. Please try again later.';
+      msgEl.classList.add('err');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    }
+  });
+</script>
+
+</body>
+</html>

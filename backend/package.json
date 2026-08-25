@@ -1,0 +1,31 @@
+{
+  "name": "lokesh-portfolio-backend",
+  "version": "1.0.0",
+  "description": "Secure backend API for Lokesh Kumar's portfolio — contact form + admin auth, hardened against bots, CSRF, and abusive traffic.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "hash-password": "node scripts/hash-password.js",
+    "audit": "npm audit --production"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express-rate-limit": "^7.4.0",
+    "express-slow-down": "^2.0.3",
+    "express-validator": "^7.2.0",
+    "cookie-parser": "^1.4.6",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "morgan": "^1.10.0",
+    "sanitize-html": "^2.13.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
